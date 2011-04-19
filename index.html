@@ -66,8 +66,8 @@
 <dd><p>Utility class to detect thread blocking. Intended for debugging only.</p>
 <p><tt class="docutils literal"><span class="pre">blocking_resolution</span></tt> is the number of seconds to wait before considering
 the thread blocked.</p>
-<p>Operates by setting and attempt to clearing an alarm signal. If it does not
-clear the alarm signal then the thread is likely blocked and
+<p>Operates by setting and attempt to clear an alarm signal. The alarm signal
+cannot be cleared then the thread is considered blocked and
 <tt class="docutils literal"><span class="pre">BlockingDetector.alarm_handler</span></tt> is invoked with the signal and current
 frame. The default implementation prints the stack from the blocked frame
 with logging.error.</p>
