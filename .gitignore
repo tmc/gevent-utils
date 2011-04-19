@@ -1,0 +1,5 @@
+*.pyc
+/docs/html
+/build
+/dist
+/MANIFEST
