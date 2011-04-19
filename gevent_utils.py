@@ -60,7 +60,7 @@ class BlockingDetector(object):
             self._old_signal_handler = tmp
         arm_alarm(self.blocking_resolution)
 
-    def clear_signal(self, resolution):
+    def clear_signal(self):
         if (hasattr(self, "_old_signal_handler") and self._old_signal_handler):
             signal.signal(signal.SIGALRM, self._old_signal_handler)
         signal.alarm(0)
