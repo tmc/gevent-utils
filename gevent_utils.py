@@ -31,8 +31,8 @@ class BlockingDetector(object):
     ``blocking_resolution`` is the number of seconds to wait before considering
     the thread blocked.
     
-    Operates by setting and attempt to clearing an alarm signal. If it does not
-    clear the alarm signal then the thread is likely blocked and
+    Operates by setting and attempt to clear an alarm signal. The alarm signal
+    cannot be cleared then the thread is considered blocked and
     ``BlockingDetector.alarm_handler`` is invoked with the signal and current
     frame. The default implementation prints the stack from the blocked frame
     with logging.error.
