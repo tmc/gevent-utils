@@ -55,22 +55,22 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#gevent_utils.BlockingDetector" title="gevent_utils.BlockingDetector"><tt class="xref py py-obj docutils literal"><span class="pre">BlockingDetector</span></tt></a>([blocking_resolution])</td>
+<tr><td><a class="reference internal" href="#gevent_utils.BlockingDetector" title="gevent_utils.BlockingDetector"><tt class="xref py py-obj docutils literal"><span class="pre">BlockingDetector</span></tt></a>([timeout])</td>
 <td>Utility class to detect thread blocking.</td>
 </tr>
 </tbody>
 </table>
 <dl class="class">
 <dt id="gevent_utils.BlockingDetector">
-<em class="property">class </em><tt class="descclassname">gevent_utils.</tt><tt class="descname">BlockingDetector</tt><big>(</big><em>blocking_resolution=1</em><big>)</big><a class="headerlink" href="#gevent_utils.BlockingDetector" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">gevent_utils.</tt><tt class="descname">BlockingDetector</tt><big>(</big><em>timeout=1</em><big>)</big><a class="headerlink" href="#gevent_utils.BlockingDetector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Utility class to detect thread blocking. Intended for debugging only.</p>
-<p><tt class="docutils literal"><span class="pre">blocking_resolution</span></tt> is the number of seconds to wait before considering
-the thread blocked.</p>
+<p><tt class="docutils literal"><span class="pre">timeout</span></tt> is the number of seconds to wait before considering the thread
+blocked.</p>
 <p>Operates by setting and attempt to clear an alarm signal. The alarm signal
 cannot be cleared then the thread is considered blocked and
 <tt class="docutils literal"><span class="pre">BlockingDetector.alarm_handler</span></tt> is invoked with the signal and current
-frame. The default implementation prints the stack from the blocked frame
-with logging.error.</p>
+frame. An <tt class="docutils literal"><span class="pre">AlarmInterrupt</span></tt> exception will be raised if the signal
+actually gets raised.</p>
 <p>Invoke via: gevent.spawn(BlockingDetector())</p>
 </dd></dl>
 
