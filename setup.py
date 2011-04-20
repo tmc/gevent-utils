@@ -1,6 +1,6 @@
-from distutils.core import setup
+from setuptools import setup
 
-__version__ = (0, 0, 1)
+__version__ = (0, 0, 2)
 
 setup(
     name = 'gevent_utils',
@@ -9,4 +9,5 @@ setup(
     author = 'Travis Cline',
     author_email = 'travis.cline@gmail.com',
     description = 'miscellaneous gevent utilities',
+    url = 'http://traviscline.github.com/gevent-utils',
 )
