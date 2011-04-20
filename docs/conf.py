@@ -9,8 +9,8 @@ extensions = ['sphinx.ext.autodoc', 'sphinx.ext.autosummary'] + optional_extensi
 master_doc = 'index'
 project = u'gevent-utils'
 copyright = u'2011, Travis Cline'
-version = '0.0.1'
-release = '0.0.1'
+version = '0.0.2'
+release = '0.0.2'
 
 exclude_patterns = []
 add_module_names = True
